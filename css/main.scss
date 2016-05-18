@@ -1,0 +1,91 @@
+$background-color: #265F72; 
+$board-color: #D9C661;
+$glow-color: transparentize(darken($board-color, 25%), .5);
+$boardsize: 500px;
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  background-color: $background-color;
+}
+
+#gameboard{
+  @include centerer;
+  height: $boardsize;
+  width: $boardsize;
+  color: $board-color;
+  margin-left: 40px;
+  }
+
+.square{
+  height: $boardsize/3;
+  box-sizing: border-box;
+  text-align: center;
+  padding:50px;
+  font-size:40px;
+  font-weight: bold;
+  }
+
+.symbol {
+  font-size:40px;
+  font-weight: bold;
+  padding: 8px;
+
+}
+
+.left-square {
+  border-right: 2px solid black;
+  border-color: $board-color;
+}
+
+.right-square{
+  border-left: 2px solid black;
+  border-color: $board-color;
+}
+
+#row1, #row2 {
+  border-bottom: 2px solid black;
+  border-color: $board-color;
+}
+
+.glow {
+  text-shadow: 4px 2px 4px $glow-color,
+               4px -2px 4px $glow-color,
+               -4px 2px 4px $glow-color,
+               -4px -2px 4px $glow-color,
+               2px 4px 4px $glow-color,
+               2px -4px 4px $glow-color,
+               -2px 4px 4px $glow-color,
+               -2px -4px 4px $glow-color,
+}
+
+.buttons {
+  width: 170px;
+  margin: 100px 0 0 40px;
+  text-align: center;
+  h1 {
+    color: $board-color;
+  }
+}
+.buttons span{
+  cursor: pointer;
+  display: inline-block;
+  color: $board-color;
+  border: 2px solid $board-color;
+  width: 150px;
+  height: 75px;
+  margin: 8px;
+  border-radius: 10%;
+  text-align: center;
+}
+
+
+
+//add media queries 
+
+//at 910
